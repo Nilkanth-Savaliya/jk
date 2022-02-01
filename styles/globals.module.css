@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: -webkit-linear-gradient(left, #480048, #c04848);
+  width: 100%;
+  padding: 5px 10px;
+}
+.headerLogo {
+  width: 170px;
+}
+.headerLogo img {
+  width: 100%;
+}
+.headerMenuOuter {
+  display: flex;
+  /* width: 82%; */
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.headerMenu {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  color: white;
+  margin-right: 22px;
+  text-decoration: none;
+}
+.headerMenuInner {
+  display: flex;
+}
+.headerBar {
+  display: none !important;
+}
+.footer {
+  background: #121921;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footerSubDiv {
+  max-width: var(--maxWidth);
+  display: flex;
+  padding: 80px 0 30px;
+  justify-content: space-between;
+  border-bottom: 1px solid #293f56;
+}
+.footerInformationDiv {
+  width: 40%;
+}
+.footerLogoDiv {
+  margin-bottom: 20px;
+}
+.footerInformationText {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 30px 0;
+}
+.footerTitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.footerMenuOuter {
+  width: 20%;
+}
+.footerMenu {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 5px;
+}
+.footerContactOuter {
+  width: 20%;
+}
+.footerContactInfoText {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+.footerBottomDiv p {
+  color: #555555;
+  font-size: 13px;
+}
+.footerBottomDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}

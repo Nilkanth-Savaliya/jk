@@ -1,0 +1,58 @@
+.separator {
+  position: relative;
+  width: 40px;
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+}
+.separator:before {
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  width: 10px;
+  height: 2px;
+  background-color: rgba(0, 162, 255, 0.7);
+}
+.separator:after {
+  position: absolute;
+  content: "";
+  right: 0px;
+  top: 0px;
+  width: 10px;
+  height: 2px;
+  background-color: rgba(0, 162, 255, 0.7);
+}
+.separator span {
+  position: absolute;
+  left: 50%;
+  top: -2px;
+  width: 10px;
+  height: 5px;
+  margin-left: -5px;
+  display: inline-block;
+  background-color: #121921;
+}
+.aboutUsInfoText {
+  color: #222222;
+  font-size: 14px;
+}
+.aboutUs {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+  max-width: var(--maxWidth);
+}
+.aboutUsInfoDiv {
+  width: 48%;
+}
+.aboutUsImageDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+}
+
+.aboutUsImage {
+  width: 100%;
+  border-radius: 25px;
+}
