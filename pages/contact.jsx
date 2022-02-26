@@ -31,8 +31,9 @@ export default function Contact() {
         mt={0}
         centerContent
         overflow="hidden"
+        
       >
-        <Flex>
+        <Flex >
           <Box
             bg="#121921"
             color="white"
@@ -58,8 +59,9 @@ export default function Contact() {
                           color="#DCE2FF"
                           _hover={{ border: "2px solid #1C6FEB" }}
                           leftIcon={<MdPhone color="#1970F1" size="20px" />}
-                        >
-                          +91-988888888
+                        ><a href="tel:98941484">
+
+                          +91-988888888</a>
                         </Button>
                         <Button
                           size="md"
@@ -70,7 +72,7 @@ export default function Contact() {
                           _hover={{ border: "2px solid #1C6FEB" }}
                           leftIcon={<MdEmail color="#1970F1" size="20px" />}
                         >
-                          hello@abc.com
+                         <a href="mailto:hello@abc.com"> hello@abc.com</a>
                         </Button>
                         <Button
                           size="md"
@@ -89,8 +91,8 @@ export default function Contact() {
                     </Box>
                   </Box>
                 </WrapItem>
-                <WrapItem>
-                  <Box bg="white" borderRadius="lg">
+                <WrapItem width={'100%'}>
+                  <Box bg="white" borderRadius="lg" >
                     <Box m={8} color="#0B0E3F">
                       <VStack spacing={5}>
                         <FormControl id="name">

@@ -1,8 +1,16 @@
+.aboutUsTitle {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 500;
+  color: white;
+  color: #3f9fff;
+}
+
 .separator {
   position: relative;
   width: 40px;
   margin-top: 16px !important;
-  margin-bottom: 16px !important;
+  padding-bottom: 16px !important;
 }
 .separator:before {
   position: absolute;
@@ -40,19 +48,108 @@
   display: flex;
   justify-content: space-between;
   margin: 50px auto;
+  flex-wrap: wrap;
   max-width: var(--maxWidth);
 }
 .aboutUsInfoDiv {
   width: 48%;
+  min-width: 350px;
+  margin-bottom: 20px;
 }
 .aboutUsImageDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 48%;
+  min-width: 350px;
 }
 
 .aboutUsImage {
   width: 100%;
   border-radius: 25px;
+}
+.strengthDivBg {
+  background-image: url(/bg_call_section.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.strengthDivOuter {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+}
+.strengthReadMoreButton {
+  background-color: #3f9fff;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 22px;
+  padding: 15px;
+}
+.strengthDivInner {
+  background-color: #131a21;
+  padding: 40px;
+  width: 60%;
+  color: white;
+  min-width: 310px;
+}
+.strengthTitle {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 500;
+  color: white;
+}
+.strengText {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 10px 0 30px 0;
+}
+
+.card img {
+  width: 65%;
+  margin: 0 auto;
+}
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background: #3f9fff;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  color: #121921;
+  text-align: center;
+  font-family: arial;
+}
+.cardName {
+  font-size: 18px;
+  font-weight: 500;
+}
+.productSection {
+  /* max-width: var(--maxWidth); */
+  margin: 30px auto;
+  overflow: hidden;
+}
+.sectionHedding {
+  font-size: 38px;
+  text-align: center;
+  font-weight: 500;
 }

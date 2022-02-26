@@ -2,12 +2,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: -webkit-linear-gradient(left, #480048, #c04848);
+  background: linear-gradient(
+    90deg,
+    rgba(63, 159, 255, 1) 0%,
+    rgba(19, 26, 33, 1) 0%
+  );
   width: 100%;
   padding: 5px 10px;
 }
 .headerLogo {
   width: 170px;
+  padding: 10px;
 }
 .headerLogo img {
   width: 100%;
@@ -29,6 +34,7 @@
 }
 .headerMenuInner {
   display: flex;
+  align-items: center;
 }
 .headerBar {
   display: none !important;
@@ -45,9 +51,11 @@
   padding: 80px 0 30px;
   justify-content: space-between;
   border-bottom: 1px solid #293f56;
+  flex-wrap: wrap;
 }
 .footerInformationDiv {
   width: 40%;
+  min-width: 300px;
 }
 .footerLogoDiv {
   margin-bottom: 20px;
@@ -68,6 +76,7 @@
 }
 .footerMenuOuter {
   width: 20%;
+  min-width: 200px;
 }
 .footerMenu {
   font-size: 14px;
@@ -78,6 +87,8 @@
 }
 .footerContactOuter {
   width: 20%;
+  min-width: 200px;
+
 }
 .footerContactInfoText {
   font-size: 14px;

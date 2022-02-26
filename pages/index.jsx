@@ -1,14 +1,17 @@
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import globalStyles from "../styles/globals.module.css";
 import Footer from "../components/footer";
-import React , { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   useBreakpointValue,
   Stack,
+  useColorModeValue,
+  Image,
   Heading,
+  Button,
   Text,
   Container,
 } from "@chakra-ui/react";
@@ -16,7 +19,7 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib
 import Slider from "react-slick";
-import Header from '../components/header'
+import Header from "../components/header";
 export default function Home() {
   const settings = {
     dots: true,
@@ -29,16 +32,40 @@ export default function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  const centerSlider = {
+    sinfinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 3,
+  centerMode: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
 
-  // const [slider, setSlider] = (React.useState < Slider) | (null > null);
-
-  // These are the breakpoints which changes the position of the
-  // buttons as the screen size changes
+  ]
+  };
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
-
-  // This list contains all the data for carousels
-  // This can be static or loaded from a server
   const cards = [
     {
       title: "Design Projects 1",
@@ -61,35 +88,7 @@ export default function Home() {
   ];
   return (
     <>
-      {/* <div className={globalStyles.header}>
-        <div
-          id="headerBar"
-          className={globalStyles.headerBar}
-          ariaHidden="true"
-        >
-          bar
-        </div>
-        <div className={globalStyles.headerLogo}>
-          <img src="/logo.png" alt="logo" />
-        </div>
-        <div className={globalStyles.headerMenuOuter}>
-          <div className={globalStyles.headerMenuInner}>
-            <a href="#" className={globalStyles.headerMenu}>
-              Home
-            </a>
-            <a href="#" className={globalStyles.headerMenu}>
-              About Us
-            </a>
-            <a href="#" className={globalStyles.headerMenu}>
-              Products
-            </a>
-            <a href="#" className={globalStyles.headerMenu}>
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </div> */}
-      <Header/>
+      <Header />
 
       <Box
         position={"relative"}
@@ -109,7 +108,7 @@ export default function Home() {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
-        <Slider {...settings} >
+        <Slider {...settings}>
           {cards.map((card, index) => (
             <Box
               key={index}
@@ -145,7 +144,7 @@ export default function Home() {
 
       <div className={styles.aboutUs}>
         <div className={styles.aboutUsInfoDiv}>
-          <h2>Company Profile</h2>
+          <h2 className={styles.aboutUsTitle}>Company Profile</h2>
           <div className={styles.separator}>
             <span></span>
           </div>
@@ -164,54 +163,369 @@ export default function Home() {
           <img className={styles.aboutUsImage} src="/course_6.jpg" />
         </div>
       </div>
-      <Footer/>
-      {/* <div className={globalStyles.footer}>
-        <div className={globalStyles.footerSubDiv}>
-          <div className={globalStyles.footerInformationDiv}>
-            <div className={globalStyles.footerLogoDiv}>
-              <img
-                src="logo.png"
-                className={globalStyles.footerLogo}
-                alt="logo"
-              />
+      <div class={styles.strengthDivBg}>
+        <div class={styles.strengthDivOuter}>
+          <div class={styles.strengthDivInner}>
+            <div class={styles.strengthTitle}>Our Strenth</div>
+            <div class={styles.strengText}>
+              Jk products are designed and developed by experienced
+              chemist/engineers/scientist. We are committed to manufacture
+              environment friendly quality products. we care about human health
+              therefore we don't use any unsafe cheap chemicals (harmful for
+              drinking water) in our products.
             </div>
-            <p className={globalStyles.footerInformationText}>
-              Mea nibh meis philosophia eu. Duis legimus efficiantur ea sea. Id
-              placerat tacimates definitionem sea, prima quidam vim no. Duo
-              nobis persecuti cu. Nihil facilisi indoctum an vix, ut delectus
-              expetendis vis
-            </p>
-          </div>
-          <div className={globalStyles.footerMenuOuter}>
-            <h2 className={globalStyles.footerTitle}>Useful Links</h2>
-            <div className={globalStyles.footerMenuInner}>
-              <p className={globalStyles.footerMenu}>Home</p>
-              <p className={globalStyles.footerMenu}>About Us</p>
-              <p className={globalStyles.footerMenu}>Products</p>
-              <p className={globalStyles.footerMenu}>Contact Us</p>
-            </div>
-          </div>
-          <div className={globalStyles.footerContactOuter}>
-            <h2 className={globalStyles.footerTitle}>Contact with Us</h2>
-            <div className={globalStyles.footerContactInner}>
-              <div className={globalStyles.footerContactInfo}>
-                <p className={globalStyles.footerContactInfoText}>
-                  + 61 23 8093 3400
-                </p>
-                <p className={globalStyles.footerContactInfoText}>
-                  dk@example.com
-                </p>
-              </div>
+            <div class={styles.strengthReadMoreDiv}>
+              <button class={styles.strengthReadMoreButton}>Read more</button>
             </div>
           </div>
         </div>
-        <div className={globalStyles.footerBottomDiv}>
-          <p>
-            Terms and conditions <span>|</span> Privacy
-          </p>
-          <p>© Udema</p>
+      </div>
+      <div className={styles.productSection}>
+      <h1 className={styles.sectionHedding} >Our Products</h1>
+        <br />
+        <br />
+        <Slider {...centerSlider}>
+        <div>
+        <Box
+        role={'group'}
+        p={4}
+        maxW={'300px'}
+        w={'full'}
+        
+        pos={'relative'}
+        zIndex={1}>
+        <Box 
+        bg={useColorModeValue('white', 'gray.800')}
+        boxShadow={'2xl'}
+        rounded={'lg'}
+        mb={2}
+        pb={5}
+        >
+          <Image
+rounded='lg'
+width={'60%'}
+            objectFit={'cover'}
+            src={`/p1.jpg`}
+            align={'center'}
+            m={'0 auto'}
+          />
+        <Stack pt={5} align={'center'}>
+          <Heading fontSize={'2xl'} fontWeight={500}>
+            Nice Chair, pink
+          </Heading>
+        </Stack>
+        </Box>
+          
+            <Button
+                bg={'blue.400'}
+                color={'white'}
+                w={'100%'}
+                _hover={{
+                  bg: 'blue.500',
+                  transform: 'scaleY(1.1)'
+                }}>
+              Read More
+              </Button>
+        </Box>
         </div>
-      </div> */}
+        <div>
+        <Box
+        role={'group'}
+        p={4}
+        maxW={'300px'}
+        w={'full'}
+        
+        pos={'relative'}
+        zIndex={1}>
+        <Box 
+        bg={useColorModeValue('white', 'gray.800')}
+        boxShadow={'2xl'}
+        rounded={'lg'}
+        mb={2}
+        pb={5}
+        >
+          <Image
+            rounded={'lg'}
+            width={'60%'}
+            src={`/p1.jpg`}
+            align={'center'}
+            m={'0 auto'}
+          />
+        <Stack pt={5} align={'center'}>
+          <Heading fontSize={'2xl'} fontWeight={500}>
+            Nice Chair, pink
+          </Heading>
+        </Stack>
+        </Box>
+          
+            <Button
+                bg={'blue.400'}
+                color={'white'}
+                w={'100%'}
+                _hover={{
+                  bg: 'blue.500',
+                }}>
+              Read More
+              </Button>
+        </Box>
+        </div>
+        <div>
+        <Box
+        role={'group'}
+        p={4}
+        maxW={'300px'}
+        w={'full'}
+        
+        pos={'relative'}
+        zIndex={1}>
+        <Box 
+        bg={useColorModeValue('white', 'gray.800')}
+        boxShadow={'2xl'}
+        rounded={'lg'}
+        mb={2}
+        pb={5}
+        >
+          <Image
+            rounded={'lg'}
+            width={'60%'}
+            objectFit={'cover'}
+            src={`/p1.jpg`}
+            align={'center'}
+            m={'0 auto'}
+          />
+        <Stack pt={5} align={'center'}>
+          <Heading fontSize={'2xl'} fontWeight={500}>
+            Nice Chair, pink
+          </Heading>
+        </Stack>
+        </Box>
+          
+            <Button
+                bg={'blue.400'}
+                color={'white'}
+                w={'100%'}
+                _hover={{
+                  bg: 'blue.500',
+                }}>
+              Read More
+              </Button>
+        </Box>
+        </div>
+        <div>
+        <Box
+        role={'group'}
+        p={4}
+        maxW={'300px'}
+        w={'full'}
+        
+        pos={'relative'}
+        zIndex={1}>
+        <Box 
+        bg={useColorModeValue('white', 'gray.800')}
+        boxShadow={'2xl'}
+        rounded={'lg'}
+        mb={2}
+        pb={5}
+        >
+          <Image
+            rounded={'lg'}
+            width={'60%'}
+            objectFit={'cover'}
+            src={`/p1.jpg`}
+            align={'center'}
+            m={'0 auto'}
+          />
+        <Stack pt={5} align={'center'}>
+          <Heading fontSize={'2xl'} fontWeight={500}>
+            Nice Chair, pink
+          </Heading>
+        </Stack>
+        </Box>
+          
+            <Button
+                bg={'blue.400'}
+                color={'white'}
+                w={'100%'}
+                _hover={{
+                  bg: 'blue.500',
+                }}>
+              Read More
+              </Button>
+        </Box>
+        </div>
+        <div>
+        <Box
+        role={'group'}
+        p={4}
+        maxW={'300px'}
+        w={'full'}
+        
+        pos={'relative'}
+        zIndex={1}>
+        <Box 
+        bg={useColorModeValue('white', 'gray.800')}
+        boxShadow={'2xl'}
+        rounded={'lg'}
+        mb={2}
+        pb={5}
+        >
+          <Image
+            rounded={'lg'}
+            width={'60%'}
+            objectFit={'cover'}
+            src={`/p1.jpg`}
+            align={'center'}
+            m={'0 auto'}
+          />
+        <Stack pt={5} align={'center'}>
+          <Heading fontSize={'2xl'} fontWeight={500}>
+            Nice Chair, pink
+          </Heading>
+        </Stack>
+        </Box>
+          
+            <Button
+                bg={'blue.400'}
+                color={'white'}
+                w={'100%'}
+                _hover={{
+                  bg: 'blue.500',
+                }}>
+              Read More
+              </Button>
+        </Box>
+        </div>
+        <div>
+        <Box
+        role={'group'}
+        p={4}
+        maxW={'300px'}
+        w={'full'}
+        
+        pos={'relative'}
+        zIndex={1}>
+        <Box 
+        bg={useColorModeValue('white', 'gray.800')}
+        boxShadow={'2xl'}
+        rounded={'lg'}
+        mb={2}
+        pb={5}
+        >
+          <Image
+            rounded={'lg'}
+            width={'60%'}
+            objectFit={'cover'}
+            src={`/p1.jpg`}
+            align={'center'}
+            m={'0 auto'}
+          />
+        <Stack pt={5} align={'center'}>
+          <Heading fontSize={'2xl'} fontWeight={500}>
+            Nice Chair, pink
+          </Heading>
+        </Stack>
+        </Box>
+          
+            <Button
+                bg={'blue.400'}
+                color={'white'}
+                w={'100%'}
+                _hover={{
+                  bg: 'blue.500',
+                }}>
+              Read More
+              </Button>
+        </Box>
+        </div>
+        <div>
+        <Box
+        role={'group'}
+        p={4}
+        maxW={'300px'}
+        w={'full'}
+        
+        pos={'relative'}
+        zIndex={1}>
+        <Box 
+        bg={useColorModeValue('white', 'gray.800')}
+        boxShadow={'2xl'}
+        rounded={'lg'}
+        mb={2}
+        pb={5}
+        >
+          <Image
+            rounded={'lg'}
+            width={'60%'}
+            objectFit={'cover'}
+            src={`/p1.jpg`}
+            align={'center'}
+            m={'0 auto'}
+          />
+        <Stack pt={5} align={'center'}>
+          <Heading fontSize={'2xl'} fontWeight={500}>
+            Nice Chair, pink
+          </Heading>
+        </Stack>
+        </Box>
+          
+            <Button
+                bg={'blue.400'}
+                color={'white'}
+                w={'100%'}
+                _hover={{
+                  bg: 'blue.500',
+                }}>
+              Read More
+              </Button>
+        </Box>
+        </div>
+        <div>
+        <Box
+        role={'group'}
+        p={4}
+        maxW={'300px'}
+        w={'full'}
+        
+        pos={'relative'}
+        zIndex={1}>
+        <Box 
+        bg={useColorModeValue('white', 'gray.800')}
+        boxShadow={'2xl'}
+        rounded={'lg'}
+        mb={2}
+        pb={5}
+        >
+          <Image
+            rounded={'lg'}
+            width={'60%'}
+            objectFit={'cover'}
+            src={`/p1.jpg`}
+            align={'center'}
+            m={'0 auto'}
+          />
+        <Stack pt={5} align={'center'}>
+          <Heading fontSize={'2xl'} fontWeight={500}>
+            Nice Chair, pink
+          </Heading>
+        </Stack>
+        </Box>
+          
+            <Button
+                bg={'blue.400'}
+                color={'white'}
+                w={'100%'}
+                _hover={{
+                  bg: 'blue.500',
+                }}>
+              Read More
+              </Button>
+        </Box>
+        </div>
+        </Slider>
+      </div>
+      <br />
+      <br />
+      <Footer />
     </>
   );
 }
