@@ -28,7 +28,8 @@ export default function Contact() {
       <Container
         bg="#f3f3f3"
         maxW="full"
-        mt={0}
+        mt={50}
+        mb={50}
         centerContent
         overflow="hidden"
         
@@ -42,15 +43,15 @@ export default function Contact() {
             p={{ sm: 5, md: 5, lg: 16 }}
           >
             <Box p={4}>
-              <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
-                <WrapItem>
+              <Wrap spacing={{ base: 1, sm: 2, md: 3, lg: 10 }} justify={{sm : 'center', md : 'space-beetween',lg: 'space-beetween'}}>
+                <WrapItem justifyItems={'flex-start'} width={{base: '100%',sm : '100%',md: '50%',lg: 'auto'}}>
                   <Box>
                     <Heading>Contact</Heading>
                     <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
                       Fill up the form below to contact
                     </Text>
                     <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                      <VStack pl={0} spacing={3} alignItems="flex-start">
+                      <VStack pl={0} spacing={3} alignItems="flex-start" justifyContent="center">
                         <Button
                           size="md"
                           height="48px"
@@ -91,9 +92,9 @@ export default function Contact() {
                     </Box>
                   </Box>
                 </WrapItem>
-                <WrapItem width={'100%'}>
-                  <Box bg="white" borderRadius="lg" >
-                    <Box m={8} color="#0B0E3F">
+                <WrapItem  width={{base: '100%',sm : '100%',md: '50%',lg: 'auto'}} >
+                  <Box bg="white" borderRadius="lg"  justifyContent='center' width={{base: '100%',sm : '100%',md:'100%'}}  >
+                    <Box m={8} color="#0B0E3F" >
                       <VStack spacing={5}>
                         <FormControl id="name">
                           <FormLabel>Your Name</FormLabel>

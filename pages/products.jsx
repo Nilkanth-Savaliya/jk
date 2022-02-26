@@ -86,14 +86,14 @@ const Products = () => {
                   />
                 </Flex>
                 <List spacing={3} textAlign="start" px={12}>
-                  {selectedProduct.size.map((size, index) => {
+                  {selectedProduct?.size?.length > 0 ? selectedProduct.size.map((size, index) => {
                     return (
                       <ListItem>
                         <ListIcon as={FaCheckCircle} color="green.500" />
                         {size}
                       </ListItem>
                     )
-                  })}
+                  }) : null}
                 
                 </List>
               </GridItem>
