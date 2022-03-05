@@ -88,7 +88,6 @@
 .footerContactOuter {
   width: 20%;
   min-width: 200px;
-
 }
 .footerContactInfoText {
   font-size: 14px;
@@ -103,4 +102,43 @@
   display: flex;
   justify-content: space-between;
   width: 80%;
+}
+.mobileMenu{
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .headerMenuOuter {
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #121921;
+    z-index: 100;
+    display: none;
+  }
+  .headerMenuInner {
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+  }
+  .headerMenuInner button p {
+    margin-right: auto !important;
+  }
+  .headerMenuInner button {
+    width: 100%;
+  }
+
+  .headerMenuInner a {
+    width: 100%;
+  }
+  .headerMenu {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  .mobileMenu{
+    display: block;
+  }
 }

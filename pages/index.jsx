@@ -144,10 +144,12 @@ export default function Home() {
 
       <div className={styles.aboutUs}>
         <div className={styles.aboutUsInfoDiv}>
-          <h2 className={styles.aboutUsTitle}>Company Profile</h2>
+          <h2 className={styles.aboutUsTitle}>About the company</h2>
           <div className={styles.separator}>
             <span></span>
           </div>
+          <Text fontSize='2xl'>Jk Adhsive is manufacturer and supplier of the superior quality
+            solvent cement for PVC, UPVC (PVC-U), CPVC piping system.</Text>
           <p className={styles.aboutUsInfoText}>
             Jk Adhsive is manufacturer and supplier of the superior quality
             solvent cement for PVC, UPVC (PVC-U), CPVC piping system. Our

@@ -21,6 +21,7 @@ import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import { BsPerson } from "react-icons/bs";
 import Header from "../components/header";
 import Footer from "../components/footer";
+
 export default function Contact() {
   return (
     <>
